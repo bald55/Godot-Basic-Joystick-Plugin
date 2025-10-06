@@ -13,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ikw3c")
+secondary_color = null
 
 [node name="joystick_range" type="MeshInstance2D" parent="."]
 self_modulate = Color(0, 0, 0, 0.137255)

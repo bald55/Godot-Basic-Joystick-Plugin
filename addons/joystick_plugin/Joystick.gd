@@ -5,6 +5,8 @@ extends Control
 @export var move_back_speed = 10 ## The speed of the knob returning to the center.
 @export var joystick_target: Node ## What the joystick controls.
 @export var target_speed = 10 ## The speed of the target.
+@export var secondary_range = false ## Joystick outer range for visuals.
+@export var secondary_color: Color = Color(1, 1, 1, 0.3) ## Color of the ring.
 
 @onready var joystick_scene := preload("res://addons/joystick_plugin/joystick.tscn")
 
@@ -14,7 +16,11 @@ func _ready() -> void:
 		return
 	var source := preload("res://addons/joystick_plugin/Joystick.tscn").instantiate()
 	duplicate_children(source, self)
+	queue_redraw()
 
+func _draw() -> void:
+	if secondary_range:
+		draw_circle(Vector2(0, 0), 135, secondary_color)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
