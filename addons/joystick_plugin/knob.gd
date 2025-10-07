@@ -12,6 +12,8 @@ var velocity
 
 @onready var parent = get_parent()
 
+var finger_index: int = -1
+
 func _input(event):
 	if event is InputEventScreenTouch:
 		if event.pressed:
@@ -19,9 +21,12 @@ func _input(event):
 			if circle:
 				if global_position.distance_to(event.position) <= 125:
 					dragging = true
+					finger_index = event.index
 		else:
-			dragging = false
-			out_of_bounds = false
+			if dragging and event.index == finger_index:
+				dragging = false
+				out_of_bounds = false
+				finger_index = -1
 	elif event is InputEventScreenDrag and dragging:
 		if position_var.distance_to(event.position) <= 125:
 			global_position = event.position
