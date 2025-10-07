@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jlyg72oiin1h"]
 
 [ext_resource type="Script" uid="uid://b517xldatv2du" path="res://addons/joystick_plugin/knob.gd" id="1_4l7fi"]
-[ext_resource type="Script" uid="uid://cocbpv5hpv8my" path="res://addons/joystick_plugin/Joystick.gd" id="1_ikw3c"]
+[ext_resource type="Script" uid="uid://cas04b4562qef" path="res://addons/joystick_plugin/joystick_script.gd" id="1_ikw3c"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ew0fh"]
 
@@ -13,7 +13,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ikw3c")
-secondary_color = null
 
 [node name="joystick_range" type="MeshInstance2D" parent="."]
 self_modulate = Color(0, 0, 0, 0.137255)

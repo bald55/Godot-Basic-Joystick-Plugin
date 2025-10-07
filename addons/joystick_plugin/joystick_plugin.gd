@@ -8,7 +8,7 @@ func _enter_tree() -> void:
 	add_custom_type(
 		"Joystick", # Name shown in the node list
 		"Control", # Base type (matches your root node)
-		preload("res://addons/joystick_plugin/Joystick.gd"),
+		preload("res://addons/joystick_plugin/joystick_script.gd"),
 		preload("res://addons/joystick_plugin/Untitled28_20251005211814.png")
 	)
 
